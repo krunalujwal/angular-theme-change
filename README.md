@@ -1,3 +1,3 @@
 # angular-theme-change
 
-##ng serve --host 0.0.0.0 --disableHostCheck true
+## ng serve --host 0.0.0.0 --disableHostCheck true
