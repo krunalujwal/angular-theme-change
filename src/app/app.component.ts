@@ -20,7 +20,6 @@ export class AppComponent {
     console.log('domain', this.document.location.hostname);
 
     console.log('Client :: ', this.siteConfigService.port);
-
     this.clientName = this.siteConfigService.port.charAt(this.siteConfigService.port.length-1);
 
   }
