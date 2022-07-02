@@ -1,0 +1,16 @@
+h1 {
+  color: skyblue !important;
+}
+
+.toolbar-new {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: skyblue;
+  color: white;
+  font-weight: 600;
+}

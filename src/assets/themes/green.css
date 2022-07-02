@@ -1,0 +1,16 @@
+h1 {
+  color: green !important;
+}
+
+.toolbar-new {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: green;
+  color: white;
+  font-weight: 600;
+}
