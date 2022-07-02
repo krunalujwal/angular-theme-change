@@ -8,7 +8,8 @@ export class SiteConfigService {
 
   date = new Date();//new Date().getTime();
   timeStamp = this.date.getDate() + '' + this.date.getFullYear() + '' + this.date.getMonth();
-  client = document.location.hostname; // document.location.hostname.split('.')[0]
+  client: string = '';
+  // client = document.location.hostname; // document.location.hostname.split('.')[0]
   port = document.location.port;
   constructor(private http: HttpClient) { }
 
@@ -18,6 +19,11 @@ export class SiteConfigService {
       .get('assets/json/config.json')
       .toPromise()
       .then(appConfig => {
+
+        let _hostArray = document.location.hostname.split('.');
+        this.client = _hostArray[_hostArray.length - 2];
+        console.log('_client', this.client);
+
         let appTheme = '';
         switch (this.port) {
           case '4201':
@@ -50,7 +56,7 @@ export class SiteConfigService {
           _themeElement.setAttribute('rel', 'stylesheet');
           _themeElement.setAttribute('type', 'text/css');
         }
-        return this.port;
+        return { port: this.port, client: this.client };
       });
   }
 }

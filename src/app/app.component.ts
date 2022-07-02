@@ -20,13 +20,15 @@ export class AppComponent {
     console.log('domain', this.document.location.hostname);
 
     console.log('Client :: ', this.siteConfigService.port);
-    this.clientName = this.siteConfigService.port.charAt(this.siteConfigService.port.length-1);
+    this.clientName = this.siteConfigService.port.charAt(this.siteConfigService.port.length - 1);
 
   }
 
   onThemeChange(theme) {
     this.siteConfigService.getSiteConfig(theme).then((data) => {
-      this.clientName = data.charAt(data.length-1);
+      let port = data.client ? data.client :data.port;
+      this.clientName = port;
+      // this.clientName = data.charAt(data.length - 1);
     })
     /*  const cssUrl = 'assets/themes/' + theme + '.css';
      let _themeElement = document.getElementById('apptheme');
